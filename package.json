@@ -1,0 +1,26 @@
+{
+  "name": "job-hunter-agent-lisa-liu",
+  "version": "1.0.0",
+  "description": "Autonomous 4x/day multi-board career engine & AI recruiter matcher for Lisa Liu",
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs",
+    "scrape": "node -e \"import('./lib/scrapers.mjs').then(m => m.runMultiSourceScrape())\""
+  },
+  "keywords": [
+    "job-hunter",
+    "career-agent",
+    "ai-cover-letter",
+    "glassmorphism",
+    "wttj",
+    "apec",
+    "recruitment-automation"
+  ],
+  "author": "Lisa Liu",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
