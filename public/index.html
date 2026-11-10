@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Hunter Agent for Lisa Liu | Alternance • CDI • CDD Available Immediately</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-slate-100 antialiased selection:bg-indigo-500 selection:text-white pb-20">
+
+  <!-- TOP BRANDING & NAVIGATION HEADER -->
+  <header class="glass-panel sticky top-0 z-40 border-b border-white/10 px-4 lg:px-8 py-3.5 mb-8">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      
+      <!-- Logo & Candidate Brand -->
+      <div class="flex items-center gap-3.5">
+        <div class="relative">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-cyan-400 p-[1.5px] shadow-lg shadow-indigo-500/25">
+            <div class="w-full h-full bg-slate-950 rounded-2xl flex items-center justify-center">
+              <i data-lucide="crosshair" class="w-6 h-6 text-cyan-400"></i>
+            </div>
+          </div>
+          <span class="absolute -top-1 -right-1 flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+          </span>
+        </div>
+
+        <div>
+          <div class="flex flex-wrap items-center gap-2">
+            <h1 class="text-lg md:text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
+              Job Hunter Agent <span class="text-indigo-400">for Lisa Liu</span>
+            </h1>
+            <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+              ⚡ Available Immediately (ASAP)
+            </span>
+          </div>
+          
+          <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400 mt-0.5">
+            <span class="text-slate-300 flex items-center gap-1">
+              <i data-lucide="graduation-cap" class="w-3 h-3 text-indigo-400"></i> INSEEC Paris (M2)
+            </span> •
+            <span class="text-emerald-400 font-semibold flex items-center gap-1">
+              <i data-lucide="calendar" class="w-3 h-3"></i> Rythme : Jeu & Ven en entreprise (3j école Lun-Mer)
+            </span> •
+            <span class="text-cyan-400 flex items-center gap-1">
+              <i data-lucide="map-pin" class="w-3 h-3"></i> Saint-Maur-des-Fossés (RER A)
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Badges & Nav Tabs -->
+      <div class="flex flex-wrap items-center gap-2.5">
+        <a href="https://lisa.bleuh.fr/" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 hover:bg-cyan-500/20 transition flex items-center gap-1.5 shadow-sm">
+          <i data-lucide="globe" class="w-3.5 h-3.5"></i> lisa.bleuh.fr
+        </a>
+
+        <button id="btn-tab-feed" class="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-indigo-600/30 text-indigo-300 border border-indigo-500/40 hover:bg-indigo-600/50 transition flex items-center gap-1.5">
+          <i data-lucide="layers" class="w-3.5 h-3.5"></i> Contracts
+        </button>
+        <button id="btn-tab-apps" class="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800/60 text-slate-300 border border-white/5 hover:bg-slate-800 transition flex items-center gap-1.5">
+          <i data-lucide="send" class="w-3.5 h-3.5"></i> Applications (<span id="apps-count-badge">0</span>)
+        </button>
+        <button id="btn-tab-profile" class="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800/60 text-slate-300 border border-white/5 hover:bg-slate-800 transition flex items-center gap-1.5">
+          <i data-lucide="user-check" class="w-3.5 h-3.5"></i> Profile & CV
+        </button>
+        
+        <button id="btn-trigger-scan" class="ml-2 px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-indigo-500 to-cyan-500 hover:from-indigo-600 hover:to-cyan-600 text-white shadow-lg shadow-cyan-500/20 transition flex items-center gap-2 active:scale-95">
+          <i data-lucide="refresh-cw" class="w-3.5 h-3.5" id="scan-icon"></i>
+          <span>Scan 8 Sites</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main class="max-w-7xl mx-auto px-4 lg:px-8 space-y-8">
+
+    <!-- KPI STATS SUMMARY CARDS -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="glass-card rounded-2xl p-4 relative overflow-hidden group">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-medium text-slate-400">Contracts & Roles Scanned</span>
+          <span class="p-2 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+            <i data-lucide="briefcase" class="w-4 h-4"></i>
+          </span>
+        </div>
+        <div class="text-2xl font-extrabold text-white" id="stat-total-jobs">0</div>
+        <div class="text-[11px] text-slate-400 mt-1 flex items-center gap-1">
+          <i data-lucide="globe" class="w-3 h-3 text-cyan-400"></i> WTTJ, APEC, LinkedIn, Indeed, FT, HelloWork, JobTeaser, Station F
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-4 relative overflow-hidden group">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-medium text-slate-400">Top Matches (≥9.0)</span>
+          <span class="p-2 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+          </span>
+        </div>
+        <div class="text-2xl font-extrabold text-emerald-400" id="stat-high-matches">0</div>
+        <div class="text-[11px] text-slate-400 mt-1">
+          Paid Media & Data + Thu/Fri rhythm
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-4 relative overflow-hidden group">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-medium text-slate-400">Early Timeline Window (≤48h)</span>
+          <span class="p-2 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+            <i data-lucide="zap" class="w-4 h-4"></i>
+          </span>
+        </div>
+        <div class="text-2xl font-extrabold text-cyan-300" id="stat-early-window">0</div>
+        <div class="text-[11px] text-slate-400 mt-1">
+          Fresh postings for priority first-wave apply
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-4 relative overflow-hidden group">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-medium text-slate-400">Scheduler Cadence</span>
+          <span class="p-2 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
+            <i data-lucide="clock" class="w-4 h-4"></i>
+          </span>
+        </div>
+        <div class="text-2xl font-extrabold text-purple-300">2x / Day</div>
+        <div class="text-[11px] text-slate-400 mt-1" id="stat-next-run">
+          09:00 & 17:00 (Paris Time)
+        </div>
+      </div>
+    </section>
+
+    <!-- CRITERIA HIGHLIGHT BANNER -->
+    <section class="glass-panel rounded-2xl p-4 border border-indigo-500/20 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="p-2.5 rounded-xl bg-indigo-500/20 text-indigo-300 shrink-0">
+          <i data-lucide="target" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h2 class="text-xs font-bold text-white flex flex-wrap items-center gap-2">
+            <span>Targeting: Alternance • CDI • CDD</span>
+            <span class="text-[10px] px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+              ⚡ Disponible Immédiatement (ASAP)
+            </span>
+            <span class="text-[10px] px-2 py-0.5 rounded-md bg-purple-500/20 text-purple-300 border border-purple-500/30">
+              Alternance (Jeu-Ven)
+            </span>
+            <span class="text-[10px] px-2 py-0.5 rounded-md bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+              CDI / CDD (Direct Hire)
+            </span>
+          </h2>
+          <p class="text-[11px] text-slate-400 mt-0.5">
+            Paid Media ($1.3M+ budgets) • Web Analytics & Tableau Dashboards • International & English-speaking environments • Saint-Maur-des-Fossés (RER A) / Paris
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 shrink-0">
+        <span class="text-[11px] text-slate-400 font-mono">Gmail: lisalliu99@gmail.com</span>
+        <span class="text-[10px] font-bold px-2 py-0.5 rounded-md bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+          Zero-Password Mailto Active
+        </span>
+      </div>
+    </section>
+
+    <!-- SECTION: JOB FEED VIEW -->
+    <div id="view-feed" class="space-y-6">
+
+      <!-- FILTER & CRITERIA CONTROL BAR -->
+      <section class="glass-panel rounded-2xl p-4 lg:p-5 space-y-3.5">
+        
+        <!-- Primary Row: Platform Filters + Order By (Timeline Priority) -->
+        <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-3">
+          
+          <!-- Source & Contract Selector Pills -->
+          <div class="flex flex-wrap items-center gap-3">
+            <!-- Source Selector Pills -->
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span class="text-xs font-semibold text-slate-400 mr-1 flex items-center gap-1">
+                <i data-lucide="filter" class="w-3.5 h-3.5"></i> Platform:
+              </span>
+              <button data-source="all" class="filter-source-btn px-3 py-1 rounded-lg text-xs font-semibold bg-indigo-600 text-white">All (8)</button>
+              <button data-source="Welcome to the Jungle" class="filter-source-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-800/80 text-slate-300 hover:bg-slate-700">WTTJ</button>
+              <button data-source="APEC" class="filter-source-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-800/80 text-slate-300 hover:bg-slate-700">APEC</button>
+              <button data-source="LinkedIn" class="filter-source-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-800/80 text-slate-300 hover:bg-slate-700">LinkedIn</button>
+              <button data-source="Indeed" class="filter-source-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-800/80 text-slate-300 hover:bg-slate-700">Indeed</button>
+              <button data-source="France Travail" class="filter-source-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-800/80 text-slate-300 hover:bg-slate-700">France Travail</button>
+              <button data-source="HelloWork" class="filter-source-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-800/80 text-rose-300 hover:bg-slate-700">HelloWork</button>
+              <button data-source="JobTeaser" class="filter-source-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-800/80 text-teal-300 hover:bg-slate-700">JobTeaser</button>
+              <button data-source="Station F (MaddyJobs)" class="filter-source-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-800/80 text-fuchsia-300 hover:bg-slate-700">Station F</button>
+            </div>
+
+            <div class="h-4 w-px bg-white/10 hidden lg:block"></div>
+
+            <!-- Contract Type Selector Pills (Alternance, CDI, CDD) -->
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span class="text-xs font-semibold text-slate-400 mr-1 flex items-center gap-1">
+                <i data-lucide="briefcase" class="w-3.5 h-3.5 text-indigo-400"></i> Contract:
+              </span>
+              <button data-contract="all" class="filter-contract-btn px-3 py-1 rounded-lg text-xs font-semibold bg-indigo-600 text-white">All Contracts</button>
+              <button data-contract="Alternance" class="filter-contract-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-800/80 text-purple-300 hover:bg-slate-700 flex items-center gap-1">
+                <i data-lucide="graduation-cap" class="w-3 h-3 text-purple-400"></i> Alternance (<span id="contract-count-alt">18</span>)
+              </button>
+              <button data-contract="CDI" class="filter-contract-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-800/80 text-emerald-300 hover:bg-slate-700 flex items-center gap-1">
+                <i data-lucide="briefcase" class="w-3 h-3 text-emerald-400"></i> CDI (<span id="contract-count-cdi">4</span>)
+              </button>
+              <button data-contract="CDD" class="filter-contract-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-800/80 text-cyan-300 hover:bg-slate-700 flex items-center gap-1">
+                <i data-lucide="calendar" class="w-3 h-3 text-cyan-400"></i> CDD (<span id="contract-count-cdd">2</span>)
+              </button>
+            </div>
+          </div>
+
+          <!-- Order By (Timeline Priority Active by Default) -->
+          <div class="flex flex-wrap items-center gap-1.5 bg-slate-900/80 p-1.5 rounded-xl border border-cyan-500/30 shadow-lg shadow-cyan-500/5">
+            <span class="text-[11px] font-bold text-cyan-300 px-2 flex items-center gap-1 uppercase tracking-wider">
+              <i data-lucide="arrow-down-up" class="w-3.5 h-3.5 text-cyan-400"></i> Order By:
+            </span>
+            <button data-sort="recent" class="filter-sort-btn px-3 py-1 rounded-lg text-xs font-bold bg-gradient-to-r from-cyan-500/25 to-indigo-500/25 text-cyan-300 border border-cyan-500/40 flex items-center gap-1 shadow-sm transition active:scale-95">
+              <i data-lucide="clock" class="w-3.5 h-3.5 text-cyan-400"></i> Most Recent (Timeline First)
+            </button>
+            <button data-sort="score" class="filter-sort-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-800/80 text-slate-300 hover:bg-slate-700 flex items-center gap-1 transition">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-emerald-400"></i> Match Score
+            </button>
+            <button data-sort="startDate" class="filter-sort-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-800/80 text-slate-300 hover:bg-slate-700 flex items-center gap-1 transition">
+              <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-400"></i> Start Date (ASAP)
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Secondary Row: Anti-Overlap Toggle, Score Slider, Search Bar -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 border-t border-white/5">
+          
+          <!-- Anti-Overlap Toggle -->
+          <button id="btn-toggle-overlap" class="w-full sm:w-auto px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-500/30 transition flex items-center justify-center gap-1.5 whitespace-nowrap shadow-sm">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
+            <span id="overlap-toggle-label">Hide Applied (40)</span>
+          </button>
+
+          <div class="flex flex-col sm:flex-row items-center gap-2.5 w-full sm:w-auto">
+            <!-- Score Slider -->
+            <div class="flex items-center gap-2 w-full sm:w-auto px-3 py-1.5 rounded-xl bg-slate-900/60 border border-white/5">
+              <span class="text-xs text-slate-400 font-medium whitespace-nowrap">Min Score:</span>
+              <input type="range" id="filter-score-slider" min="1.0" max="9.5" step="0.5" value="5.0" class="w-24 accent-indigo-500 cursor-pointer">
+              <span id="filter-score-val" class="text-xs font-bold text-indigo-400 w-8">5.0+</span>
+            </div>
+
+            <!-- Search Query -->
+            <div class="relative w-full sm:w-60">
+              <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-2.5"></i>
+              <input type="text" id="filter-search-input" placeholder="Role, company, skill..." class="glass-input w-full pl-9 pr-3 py-1.5 rounded-xl text-xs placeholder:text-slate-500">
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- JOB CARDS LIST -->
+      <section id="jobs-container" class="space-y-4">
+        <!-- Rendered reactively via JavaScript -->
+        <div class="p-12 text-center text-slate-400">Loading contracts & opportunities...</div>
+      </section>
+
+    </div>
+
+    <!-- SECTION: APPLICATION TRACKING VIEW (ANTI-OVERLAP CENTER) -->
+    <div id="view-apps" class="hidden space-y-6">
+      <div class="glass-panel rounded-2xl p-6">
+        
+        <!-- Header & KPI Counters -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+          <div>
+            <h2 class="text-lg font-bold text-white flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-5 h-5 text-emerald-400"></i> Contract & Job Application Tracker — Anti-Overlap Hub
+            </h2>
+            <p class="text-xs text-slate-400 mt-1">
+              Synchronized with your master spreadsheet (<span id="apps-total-counter">40</span> applications recorded). Live crawler checks this list to prevent duplicate applications.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-3 py-1 rounded-xl text-xs font-semibold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
+              Total: <strong id="app-stat-total">40</strong>
+            </span>
+            <span class="px-3 py-1 rounded-xl text-xs font-semibold bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">
+              Pending: <strong id="app-stat-pending">24</strong>
+            </span>
+            <span class="px-3 py-1 rounded-xl text-xs font-semibold bg-red-500/10 text-red-300 border border-red-500/20">
+              Rejected: <strong id="app-stat-rejected">12</strong>
+            </span>
+            <span class="px-3 py-1 rounded-xl text-xs font-semibold bg-slate-500/10 text-slate-300 border border-slate-500/20">
+              Expired: <strong id="app-stat-expired">4</strong>
+            </span>
+            <button id="btn-open-add-app" class="ml-2 px-3.5 py-1 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white shadow-sm flex items-center gap-1.5 transition">
+              <i data-lucide="plus" class="w-3.5 h-3.5"></i> Log Application
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter & Search Controls inside Tracker -->
+        <div class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 mb-4">
+          <div class="flex flex-wrap items-center gap-1.5 w-full sm:w-auto">
+            <button data-app-filter="all" class="app-status-filter-btn px-3 py-1 rounded-lg text-xs font-semibold bg-indigo-600 text-white">All (40)</button>
+            <button data-app-filter="pending" class="app-status-filter-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700">Pending</button>
+            <button data-app-filter="rejected" class="app-status-filter-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700">Rejected</button>
+            <button data-app-filter="expired" class="app-status-filter-btn px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700">Expired / No Response</button>
+          </div>
+
+          <div class="relative w-full sm:w-64">
+            <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5"></i>
+            <input type="text" id="app-search-input" placeholder="Search company, title, notes..." class="glass-input w-full pl-8 pr-3 py-1.5 rounded-xl text-xs">
+          </div>
+        </div>
+
+        <!-- Batch Action Bar (Appears when checkboxes are selected) -->
+        <div id="apps-batch-bar" class="hidden p-3 mb-4 rounded-xl bg-red-950/40 border border-red-500/30 flex flex-wrap items-center justify-between gap-3 text-xs">
+          <div class="flex items-center gap-2 text-red-200 font-semibold">
+            <i data-lucide="check-square" class="w-4 h-4 text-red-400"></i>
+            <span><strong id="apps-batch-count">0</strong> application(s) selected</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="btn-batch-reject" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-red-600 hover:bg-red-500 text-white shadow-md shadow-red-500/20 transition flex items-center gap-1.5">
+              <i data-lucide="x-circle" class="w-3.5 h-3.5"></i> Move to Rejected Pile
+            </button>
+            <button id="btn-batch-pending" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-white/10 transition flex items-center gap-1.5">
+              <i data-lucide="clock" class="w-3.5 h-3.5"></i> Restore to Pending
+            </button>
+            <button id="btn-batch-clear" class="px-2.5 py-1 text-slate-400 hover:text-white transition text-xs">
+              Deselect All
+            </button>
+          </div>
+        </div>
+
+        <!-- Applications Table -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-slate-900/80 text-slate-400 border-b border-white/10 uppercase font-semibold text-[11px]">
+              <tr>
+                <th class="py-3 px-3 w-10 text-center">
+                  <input type="checkbox" id="apps-select-all" class="rounded bg-slate-800 border-slate-700 text-red-500 focus:ring-red-500 cursor-pointer" title="Select All">
+                </th>
+                <th class="py-3 px-4">Company</th>
+                <th class="py-3 px-4">Role Applied</th>
+                <th class="py-3 px-4">Date Applied</th>
+                <th class="py-3 px-4">Status / Response</th>
+                <th class="py-3 px-4">Notes & Connections</th>
+                <th class="py-3 px-4 text-right">Quick Action</th>
+              </tr>
+            </thead>
+            <tbody id="apps-table-body" class="divide-y divide-white/5">
+              <!-- Rendered dynamically via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION: PROFILE & CRITERIA VIEW (HIDDEN BY DEFAULT) -->
+    <div id="view-profile" class="hidden space-y-6">
+      <div class="glass-panel rounded-2xl p-6 max-w-4xl mx-auto space-y-6">
+        
+        <div>
+          <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            <i data-lucide="user" class="w-5 h-5 text-indigo-400"></i> Lisa Liu — Profile & Alternance Criteria
+          </h2>
+          <p class="text-xs text-slate-400 mt-1">M2 INSEEC Paris, Saint-Maur-des-Fossés address, Thu-Fri enterprise schedule, English work preference.</p>
+        </div>
+
+        <form id="profile-form" class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Candidate Full Name</label>
+              <input type="text" id="prof-name" class="glass-input w-full p-2.5 rounded-xl text-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Professional Email</label>
+              <input type="email" id="prof-email" class="glass-input w-full p-2.5 rounded-xl text-xs">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Professional Headline</label>
+            <input type="text" id="prof-headline" class="glass-input w-full p-2.5 rounded-xl text-xs">
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Address / Location</label>
+              <input type="text" id="prof-location" class="glass-input w-full p-2.5 rounded-xl text-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Portfolio Website</label>
+              <input type="text" id="prof-website" value="https://lisa.bleuh.fr/" class="glass-input w-full p-2.5 rounded-xl text-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">School & Master</label>
+              <input type="text" id="prof-school" value="INSEEC Paris — M2 Digital Marketing & E-Commerce" class="glass-input w-full p-2.5 rounded-xl text-xs">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">School to Work Schedule Rhythm</label>
+            <input type="text" id="prof-rhythm" value="3 jours école (Lun-Mer) / 2 jours entreprise (Jeu-Ven)" class="glass-input w-full p-2.5 rounded-xl text-xs">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Availability</label>
+            <input type="text" id="prof-avail" value="Disponible immédiatement / Available immediately (ASAP)" class="glass-input w-full p-2.5 rounded-xl text-xs">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Core Skills (comma-separated)</label>
+            <input type="text" id="prof-skills" class="glass-input w-full p-2.5 rounded-xl text-xs">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">CV Executive Summary</label>
+            <textarea id="prof-summary" rows="3" class="glass-input w-full p-2.5 rounded-xl text-xs"></textarea>
+          </div>
+
+          <!-- Zero-Password Gmail Dispatch Notice -->
+          <div class="p-4 rounded-xl bg-cyan-950/30 border border-cyan-500/20 space-y-2">
+            <h3 class="text-xs font-bold text-cyan-300 flex items-center gap-1.5">
+              <i data-lucide="shield-check" class="w-4 h-4"></i> Zero-Password Gmail Dispatcher
+            </h3>
+            <p class="text-[11px] text-slate-300 leading-relaxed">
+              Applications are launched with a single click using <strong>One-Click Client Dispatch (mailto:)</strong>. Your Gmail or default email client opens automatically with the recruiter's email, subject line, and full personalized cover letter pre-filled. <strong>No password or Google credentials required!</strong>
+            </p>
+          </div>
+
+          <div class="flex justify-end pt-2">
+            <button type="submit" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30 transition flex items-center gap-2">
+              <i data-lucide="save" class="w-4 h-4"></i> Save Profile & Criteria
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- MODAL: AI COVER LETTER GENERATOR -->
+  <div id="modal-cover-letter" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="glass-panel w-full max-w-3xl rounded-3xl overflow-hidden border border-white/10 flex flex-col max-h-[90vh]">
+      
+      <!-- Modal Header -->
+      <div class="p-5 border-b border-white/10 flex items-center justify-between bg-slate-900/60">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="p-1.5 rounded-lg bg-indigo-500/20 text-indigo-400">
+              <i data-lucide="file-text" class="w-4 h-4"></i>
+            </span>
+            <h3 class="text-sm font-bold text-white" id="modal-letter-title">Tailored Cover Letter</h3>
+          </div>
+          <p class="text-xs text-slate-400 mt-0.5" id="modal-letter-subtitle">Generating tailored pitch...</p>
+        </div>
+        <button id="btn-close-letter" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-white/5">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Controls & Tones -->
+      <div class="p-4 border-b border-white/5 bg-slate-950/40 flex flex-wrap items-center justify-between gap-3 text-xs">
+        <div class="flex items-center gap-2">
+          <span class="text-slate-400 font-medium">Tone:</span>
+          <button data-tone="modern" class="letter-tone-btn px-2.5 py-1 rounded-lg font-semibold bg-indigo-600 text-white">Modern & Impact</button>
+          <button data-tone="executive" class="letter-tone-btn px-2.5 py-1 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700">Executive & Data</button>
+          <button data-tone="cultural" class="letter-tone-btn px-2.5 py-1 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700">Warm & Cultural</button>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <span class="text-slate-400 font-medium">Language:</span>
+          <button data-lang="en" class="letter-lang-btn px-2.5 py-1 rounded-lg font-semibold bg-indigo-600 text-white">English (Default)</button>
+          <button data-lang="fr" class="letter-lang-btn px-2.5 py-1 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700">Français</button>
+        </div>
+      </div>
+
+      <!-- Letter Body Editor -->
+      <div class="p-5 flex-1 overflow-y-auto">
+        <textarea id="letter-textarea" rows="14" class="glass-input w-full p-4 rounded-2xl text-xs leading-relaxed font-mono resize-none focus:ring-1 focus:ring-indigo-500"></textarea>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 border-t border-white/10 bg-slate-900/60 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <button id="btn-copy-letter" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-white/5 flex items-center gap-1.5">
+            <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy
+          </button>
+          <button id="btn-download-letter" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-white/5 flex items-center gap-1.5">
+            <i data-lucide="download" class="w-3.5 h-3.5"></i> Save .txt
+          </button>
+        </div>
+
+        <button id="btn-modal-send-gmail" class="px-5 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-600 hover:to-indigo-700 text-white shadow-lg shadow-cyan-500/20 flex items-center gap-2 active:scale-95">
+          <i data-lucide="send" class="w-4 h-4"></i> Send via Gmail (lisalliu99@gmail.com)
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL: CV SUGGESTIONS & ATS OPTIMIZER -->
+  <div id="modal-cv" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="glass-panel w-full max-w-2xl rounded-3xl overflow-hidden border border-white/10 flex flex-col max-h-[85vh]">
+      
+      <div class="p-5 border-b border-white/10 flex items-center justify-between bg-slate-900/60">
+        <div class="flex items-center gap-2">
+          <span class="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400">
+            <i data-lucide="target" class="w-4 h-4"></i>
+          </span>
+          <div>
+            <h3 class="text-sm font-bold text-white">CV & ATS Match Diagnostics</h3>
+            <p class="text-xs text-slate-400" id="modal-cv-jobtitle">Analyzing match...</p>
+          </div>
+        </div>
+        <button id="btn-close-cv" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-white/5">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="p-6 space-y-6 overflow-y-auto">
+        <!-- ATS Score Meter -->
+        <div class="p-4 rounded-2xl bg-slate-950/50 border border-white/5 flex items-center justify-between">
+          <div>
+            <div class="text-xs text-slate-400 font-medium">Estimated ATS Match Score</div>
+            <div class="text-2xl font-black text-emerald-400" id="cv-ats-score">96%</div>
+            <div class="text-[11px] text-slate-500">Based on Paid Media scale, Tableau, and INSEEC M2 rhythm</div>
+          </div>
+          <div class="w-20 h-20 rounded-full border-4 border-emerald-500/30 border-t-emerald-400 flex items-center justify-center font-bold text-emerald-300">
+            High
+          </div>
+        </div>
+
+        <!-- Missing Keywords -->
+        <div>
+          <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+            <i data-lucide="alert-circle" class="w-3.5 h-3.5 text-cyan-400"></i> Recommended Keywords to Inject
+          </h4>
+          <div class="flex flex-wrap gap-1.5" id="cv-missing-keywords">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+
+        <!-- Tailored Bullet Rewrite -->
+        <div>
+          <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-indigo-400"></i> Suggested CV Bullet Point Rewrite
+          </h4>
+          <div class="p-3.5 rounded-xl bg-indigo-950/20 border border-indigo-500/30 text-xs text-slate-200 leading-relaxed font-mono" id="cv-suggested-bullet">
+            Loading...
+          </div>
+          <button id="btn-copy-bullet" class="mt-2 text-[11px] text-indigo-300 hover:text-indigo-200 flex items-center gap-1">
+            <i data-lucide="copy" class="w-3 h-3"></i> Copy bullet to clipboard
+          </button>
+        </div>
+
+      </div>
+
+      <div class="p-4 border-t border-white/10 bg-slate-900/60 flex justify-end">
+        <button id="btn-close-cv-bottom" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-200 hover:bg-slate-700">
+          Close Inspector
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL: MARK AS APPLIED / ADD APPLICATION -->
+  <div id="modal-mark-applied" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="glass-panel w-full max-w-lg rounded-3xl overflow-hidden border border-white/10 flex flex-col">
+      <div class="p-5 border-b border-white/10 flex items-center justify-between bg-slate-900/60">
+        <div class="flex items-center gap-2">
+          <span class="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+          </span>
+          <div>
+            <h3 class="text-sm font-bold text-white">Record Alternance Application</h3>
+            <p class="text-xs text-slate-400">Add to your Anti-Overlap Tracker to prevent duplicate applications</p>
+          </div>
+        </div>
+        <button id="btn-close-mark-applied" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-white/5">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="form-mark-applied" class="p-6 space-y-4">
+        <input type="hidden" id="apply-job-id">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Company</label>
+          <input type="text" id="apply-company" required class="glass-input w-full p-2.5 rounded-xl text-xs">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Alternance Role Title</label>
+          <input type="text" id="apply-role" required class="glass-input w-full p-2.5 rounded-xl text-xs">
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Date Applied</label>
+            <input type="date" id="apply-date" required class="glass-input w-full p-2.5 rounded-xl text-xs">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Status</label>
+            <select id="apply-status" class="glass-input w-full p-2.5 rounded-xl text-xs">
+              <option value="Pending">Pending (En attente)</option>
+              <option value="Interview">Interview (Entretien)</option>
+              <option value="Rejected">Rejected</option>
+              <option value="Expired">No Response</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Notes / LinkedIn Contacts</label>
+          <input type="text" id="apply-notes" placeholder="e.g. Applied on WTTJ, Connected to recruiter on LinkedIn" class="glass-input w-full p-2.5 rounded-xl text-xs">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Candidate Portal Link (Optional)</label>
+          <input type="url" id="apply-portal" placeholder="https://..." class="glass-input w-full p-2.5 rounded-xl text-xs">
+        </div>
+
+        <div class="flex justify-end gap-2 pt-2">
+          <button type="button" id="btn-cancel-mark-applied" class="px-4 py-2 rounded-xl text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700">Cancel</button>
+          <button type="submit" class="px-5 py-2 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-600/30 flex items-center gap-1.5">
+            <i data-lucide="check" class="w-4 h-4"></i> Add to Tracker & Hide
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- MAIN SCRIPT -->
+  <script src="app.js"></script>
+</body>
+</html>

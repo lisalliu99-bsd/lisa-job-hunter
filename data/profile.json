@@ -1,0 +1,89 @@
+{
+  "name": "Lisa Liu",
+  "headline": "M2 Digital Marketing & E-Commerce (INSEEC Paris) | Paid Media Specialist & Data Analyst",
+  "email": "lisalliu99@gmail.com",
+  "phone": "+33 06 72 55 84 59",
+  "address": "Saint-Maur-des-Fossés (94100), Île-de-France",
+  "location": "Saint-Maur-des-Fossés / Paris (RER A) & Remote",
+  "website": "https://lisa.bleuh.fr/",
+  "school": "INSEEC Paris",
+  "degree": "M2 Digital Marketing & E-Commerce",
+  "contractType": "Alternance (12 mois) • CDI • CDD",
+  "targetContracts": [
+    "Alternance",
+    "CDI",
+    "CDD"
+  ],
+  "availability": "Disponible immédiatement / Available immediately (ASAP)",
+  "scheduleRhythm": {
+    "schoolDays": "Lundi, Mardi, Mercredi (INSEEC Paris)",
+    "workDays": "Jeudi, Vendredi (Entreprise - 2 jours / semaine pour Alternance; flexible pour CDI/CDD)",
+    "duration": "12 mois ou CDI/CDD"
+  },
+  "remotePreference": "Hybrid (accessible from Saint-Maur-des-Fossés / Paris RER A) or Full Remote",
+  "workLanguagePreference": "English-speaking / International environments preferred",
+  "languages": {
+    "english": "Native / Bilingual (Fluent working language)",
+    "chinese": "Native oral, intermediate written",
+    "french": "Professional reading comprehension, conversational spoken (actively progressing)"
+  },
+  "targetRoles": [
+    "Paid Media & User Acquisition Specialist (Alternance / CDI / CDD)",
+    "Growth Marketing & Traffic Manager (Alternance / CDI / CDD)",
+    "Web Analytics & Data Analyst - GA4, SQL, Tableau (Alternance / CDI / CDD)",
+    "E-Commerce Project Manager & CRO (Alternance / CDI / CDD)",
+    "Performance Marketing & Social Ads Specialist (Alternance / CDI / CDD)"
+  ],
+  "experienceYears": 3,
+  "skills": [
+    "Paid Media ($1.3M+/mo budgets)",
+    "Facebook Ads Manager (900+ active ads)",
+    "TikTok Ads, Snapchat Ads, Reddit Ads, X Ads",
+    "Web Analytics (SQL, DataGrip, GA4, GTM, D-EDGE)",
+    "Interactive Dashboards (Tableau, Looker Studio, Excel)",
+    "E-Commerce & Funnel CRO (WoW, P3WA metrics)",
+    "A/B Testing, Audience Segmentation & Attribution",
+    "SEO & AI Search Engine Benchmarking",
+    "US Market Localization & Content Adaptation"
+  ],
+  "education": [
+    {
+      "institution": "INSEEC Paris",
+      "degree": "M2 Digital Marketing & E-Commerce",
+      "period": "Depuis oct. 2025"
+    },
+    {
+      "institution": "Wake Forest University (USA)",
+      "degree": "Business Management, Marketing",
+      "period": "Août 2017 – Mai 2021"
+    }
+  ],
+  "experienceBullets": [
+    "Pilotage et analyse de la stratégie d'acquisition sur des budgets mensuels de plusieurs millions de dollars ($1.3M+) chez Red Ventures sur Facebook, Snapchat, Reddit, TikTok et X.",
+    "Gestion opérationnelle complète sur Facebook Ads Manager (900+ annonces actives) et structuration de tests A/B rigoureux (audiences, OS, modèles d'attribution).",
+    "Direction d'un test fournisseur Snapchat à 300K$ sur 3 mois, réalisation de 35+ optimisations et atteinte d'un coût par acquisition (CPA) record.",
+    "Conception et implémentation d'un dashboard interactif sous Tableau pour mesurer la performance du funnel (WoW, P3WA), fluidifier le reporting d'équipe et fournir des insights décisionnels réguliers.",
+    "Exploitation et analyse des données de performance via D-EDGE Web Analytics pour concevoir des reportings stratégiques axés sur l'optimisation des réservations directes d'un complexe hôtelier de luxe (South Pacific Management).",
+    "Réalisation d'audits concurrentiels SEO adaptés aux moteurs de recherche axés sur l'IA et localisation de contenus web vers l'anglais américain."
+  ],
+  "targetSites": [
+    "Welcome to the Jungle",
+    "APEC",
+    "LinkedIn",
+    "Indeed",
+    "France Travail",
+    "HelloWork",
+    "JobTeaser",
+    "Station F (MaddyJobs)"
+  ],
+  "gmailSettings": {
+    "userEmail": "lisalliu99@gmail.com",
+    "sendMode": "mailto",
+    "appPasswordConfigured": false
+  },
+  "franceTravailApi": {
+    "clientId": "PAR_jobfeedintegration_df26a17d3e52a6eb586cb9be9c6ef399622904a0003c9a69b3168d49195c39ee",
+    "clientSecret": "aef8a0383d4cf1bd8a4c391ecc8d57f94af8a0654c865dde292f853ba9be21df",
+    "status": "Connected (Active until 10/11/2027)"
+  }
+}
